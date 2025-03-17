@@ -1,0 +1,56 @@
+/* Dashboard Container */
+.dashboard-container {
+  text-align: center;
+  padding: 30px;
+  background: #f8f9fa; /* Clean off-white background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Thought Section */
+h2 {
+  color: #333;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 635px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Finance Summary (3D Effect) */
+.finance-summary {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Individual Finance Box (3D look with shadow) */
+.finance-summary p {
+  background: #fdfdfd; /* Off-white color */
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 280px;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15), -5px -5px 10px rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover Effect (Pop Out Effect) */
+.finance-summary p:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -8px -8px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Colors for Each Section */
+.finance-summary p:nth-child(1) { border-left: 6px solid #4CAF50; color: #333; } /* Income */
+.finance-summary p:nth-child(2) { border-left: 6px solid #F44336; color: #333; } /* Expenditure */
+.finance-summary p:nth-child(3) { border-left: 6px solid #FFC107; color: #333; } /* Invested */
+.finance-summary p:nth-child(4) { border-left: 6px solid #2196F3; color: #333; } /* Left Money */
