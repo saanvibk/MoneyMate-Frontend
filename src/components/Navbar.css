@@ -4,12 +4,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: #67bbff; /* Dark background for a modern look */
+    background: #f0d7ff; /* Dark background for a modern look */
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 50px;
   }
   
   /* Update Expenses Button */
@@ -57,6 +58,8 @@
   }
   
   .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(244, 244, 244, 0.671); 
+     border-radius: 20px;
+    transition: all 0.3s ease-in-out;
   }
   

@@ -1,0 +1,78 @@
+.learn-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 45px;
+  }
+
+.learn-h2{
+    background-color: #f0d7ff;
+    border-radius: 7px;
+    height: 88px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+  .learn-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .learn-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+  }
+  
+  .section {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .section-header {
+    background-color: #faf4ff;
+    padding: 17px 30px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .section-header:hover {
+    background-color: #f0d7ff;
+  }
+  
+  .section-content {
+    padding: 30px;
+    max-height: 200px; /* Adjust height as needed */
+  overflow-y: auto; 
+    background-color: white;
+  }
+  
+  .subsection {
+    margin-bottom: 15px;
+  }
+  
+  .subsection h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 22px;
+    background-color: #f0e2ff;
+    height: 27px;
+    text-align: start;
+    padding: 10px;
+  }
+  
+  .subsection p {
+    font-size: 19px;
+    line-height: 35px;
+  }
+  
