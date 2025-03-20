@@ -7,7 +7,7 @@ const Dashboard=()=>
         <div>
             <Navbar/>
             <div className="dashboard-container">
-                <h2>"Save money today to enjoy financial freedom tomorrow!"</h2>
+                <h2 className="dash-h2s">"Save money today to enjoy financial freedom tomorrow!"</h2>
                 <div className="finance-summary">
                     <p><strong>Income:</strong>50,000</p>
                     <p><strong>Expenditure:</strong> ₹20,000</p>
