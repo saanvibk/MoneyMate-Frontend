@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import "./signup.css";
 
 const Signup=()=>{
+    const navigate = useNavigate();
+    const [error, setError] = useState("");  // To show errors
+
     const [formData, setFormData] = useState(
         {
             username: "",
             email: "",
             password: "",
-            confimPassword: ""
+            confirmPassword: ""
 
         }   
     )
@@ -16,20 +21,54 @@ const Signup=()=>{
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+        if (formData.password !== formData.confirmPassword) {
+            setError("Passwords do not match.");
+            return;
+        }
+        setError("");  // Clear previous errors
+
+        
+          await fetch("http://localhost:5000/auth/signup", {
+            method: "POST",
+            headers:{
+              "Content-Type": "application/json"
+            },
+            credentials: 'include',
+
+            body: JSON.stringify({
+              username: formData.username,
+              email: formData.email,
+              password: formData.password
+          }),
+
+
+          }).then((res)=>{
+            if (res.status === 200) {
+              navigate("/dashboard")
+            }
+          }).catch((err)=>{
+            console.log(err);
+          })
+            
+        
+    }
+
     return(
         <div className="signup-container">
       <div className="signup-card">
         <h2 className="signup-title">Sign Up</h2>
-        <form  className="signup-form">
+        <form  onSubmit={handleSubmit} className="signup-form">
           {/* Name */}
           <div className="input-group">
-            <label htmlFor="name">Full Name</label>
+            <label htmlFor="username">Username</label>
             <input
-              id="name"
-              name="name"
+              id="username"
+              name="username"
               type="text"
-              placeholder="Enter your full name"
-              value={formData.usernamename}
+              placeholder="Enter username"
+              value={formData.username}
               onChange={handleChange}
               required
             />
@@ -76,12 +115,11 @@ const Signup=()=>{
               required
             />
           </div>
-
-          {/* Error Message */}
-          {/* {error && <p className="error-message">{error}</p>} */}
+          
+          {error && <p className="error-message">{error}</p>}
 
           {/* Sign Up Button */}
-          <button type="submit" className="signup-button">
+          <button type="submit" className="signup-button" >
             Sign Up
           </button>
 
