@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Learn.css"; // External CSS file for styling
+import "./css/Learn.css"; // External CSS file for styling
 
 const Learn = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -10,10 +10,12 @@ const Learn = () => {
 
   return (
     <div className="learn-container">
-        <div className="learn-h2">
-            <h1 className="learn-title">Learn Money Management</h1>
-            <p className="learn-subtitle">Master the essentials of earning, saving, and investing money!</p>
-        </div>
+      <div className="learn-h2">
+        <h1 className="learn-title">Learn Money Management</h1>
+        <p className="learn-subtitle">
+          Master the essentials of earning, saving, and investing money!
+        </p>
+      </div>
       {/* Sections */}
       {sections.map((section, index) => (
         <div key={index} className="section">
